@@ -2,6 +2,7 @@
 
 namespace Database\Factories;
 
+use App\Models\Amenity;
 use Illuminate\Database\Eloquent\Factories\Factory;
 
 class RoomTypeFactory extends Factory
@@ -13,18 +14,17 @@ class RoomTypeFactory extends Factory
             'description' => fake()->paragraph(),
             'price_per_night' => fake()->numberBetween(100, 1000),
             'capacity' => fake()->numberBetween(1, 6),
-            'amenities' => fake()->randomElements([
-                'Wi-Fi',
-                'TV',
-                'Mini Bar',
-                'Air Conditioning',
-                'Safe',
-                'Balcony',
-                'Ocean View',
-                'Kitchen',
-                'Living Room',
-                'Jacuzzi'
-            ], fake()->numberBetween(3, 8))
         ];
+    }
+
+    public function configure()
+    {
+        return $this->afterCreating(function ($roomType) {
+            $amenities = Amenity::inRandomOrder()
+                ->take(fake()->numberBetween(3, 8))
+                ->get();
+            
+            $roomType->amenities()->attach($amenities);
+        });
     }
 } 

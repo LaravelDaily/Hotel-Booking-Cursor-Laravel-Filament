@@ -13,16 +13,16 @@ class RoomType extends Model
         'name',
         'description',
         'price_per_night',
-        'capacity',
-        'amenities'
-    ];
-
-    protected $casts = [
-        'amenities' => 'array',
+        'capacity'
     ];
 
     public function rooms()
     {
         return $this->hasMany(Room::class);
+    }
+
+    public function amenities()
+    {
+        return $this->belongsToMany(Amenity::class);
     }
 } 

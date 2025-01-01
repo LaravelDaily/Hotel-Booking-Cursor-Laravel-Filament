@@ -2,6 +2,7 @@
 
 namespace Database\Seeders;
 
+use App\Models\Amenity;
 use App\Models\RoomType;
 use Illuminate\Database\Seeder;
 
@@ -40,8 +41,14 @@ class RoomTypeSeeder extends Seeder
             ],
         ];
 
-        foreach ($roomTypes as $roomType) {
-            RoomType::create($roomType);
+        foreach ($roomTypes as $roomTypeData) {
+            $amenityNames = $roomTypeData['amenities'];
+            unset($roomTypeData['amenities']);
+            
+            $roomType = RoomType::create($roomTypeData);
+            
+            $amenities = Amenity::whereIn('name', $amenityNames)->get();
+            $roomType->amenities()->attach($amenities);
         }
     }
 } 

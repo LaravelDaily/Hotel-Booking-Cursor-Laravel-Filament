@@ -38,19 +38,8 @@ class RoomTypeResource extends Resource
                     ->minValue(1)
                     ->maxValue(10),
                 Forms\Components\CheckboxList::make('amenities')
+                    ->relationship('amenities', 'name')
                     ->required()
-                    ->options([
-                        'Wi-Fi' => 'Wi-Fi',
-                        'TV' => 'TV',
-                        'Mini Bar' => 'Mini Bar',
-                        'Air Conditioning' => 'Air Conditioning',
-                        'Safe' => 'Safe',
-                        'Balcony' => 'Balcony',
-                        'Ocean View' => 'Ocean View',
-                        'Kitchen' => 'Kitchen',
-                        'Living Room' => 'Living Room',
-                        'Jacuzzi' => 'Jacuzzi',
-                    ])
                     ->columns(2)
                     ->gridDirection('row'),
             ]);
