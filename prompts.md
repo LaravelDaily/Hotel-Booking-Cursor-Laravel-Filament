@@ -33,3 +33,18 @@ Change RoomType amenities from json to be a separate Model Amenity with a many-t
 Also, generate a Seeder for Amenities and change the factory of RoomType accordingly to use the values from that Seeder.
 
 Also, change Filament Resource form method to use CheckboxList with multiple relationship.
+
+---
+
+Generate a Tailwind homepage for a hotel and place it into welcome.blade.php instead of the default Laravel homepage.
+
+Elements of the page:
+- A big photo background: use some free image from Unsplash or other platform
+- Form to search the room by fields of date from (default tomorrow) and date to (default today + 5 days) and number of people staying
+- A footer with main information like email, phone number and links to social profiles
+
+In Blade, use Vite with Laravel 11 syntax and not Tailwind from CDN.
+
+---
+
+In the welcome.blade.php, remove the links on the top-right and footer Quick Links section.
