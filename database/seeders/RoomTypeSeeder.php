@@ -16,6 +16,7 @@ class RoomTypeSeeder extends Seeder
                 'description' => 'Comfortable room with basic amenities',
                 'price_per_night' => 100.00,
                 'capacity' => 2,
+                'size' => 28,
                 'amenities' => ['Wi-Fi', 'TV', 'Air Conditioning']
             ],
             [
@@ -23,6 +24,7 @@ class RoomTypeSeeder extends Seeder
                 'description' => 'Spacious room with premium amenities',
                 'price_per_night' => 200.00,
                 'capacity' => 2,
+                'size' => 35,
                 'amenities' => ['Wi-Fi', 'TV', 'Air Conditioning', 'Mini Bar', 'Safe']
             ],
             [
@@ -30,6 +32,7 @@ class RoomTypeSeeder extends Seeder
                 'description' => 'Large suite perfect for families',
                 'price_per_night' => 350.00,
                 'capacity' => 4,
+                'size' => 65,
                 'amenities' => ['Wi-Fi', 'TV', 'Air Conditioning', 'Mini Bar', 'Safe', 'Kitchen', 'Living Room']
             ],
             [
@@ -37,6 +40,7 @@ class RoomTypeSeeder extends Seeder
                 'description' => 'Luxurious suite with all premium amenities',
                 'price_per_night' => 800.00,
                 'capacity' => 4,
+                'size' => 120,
                 'amenities' => ['Wi-Fi', 'TV', 'Air Conditioning', 'Mini Bar', 'Safe', 'Kitchen', 'Living Room', 'Jacuzzi', 'Ocean View', 'Balcony']
             ],
         ];

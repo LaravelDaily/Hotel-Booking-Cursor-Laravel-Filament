@@ -14,6 +14,7 @@ class RoomTypeFactory extends Factory
             'description' => fake()->paragraph(),
             'price_per_night' => fake()->numberBetween(100, 1000),
             'capacity' => fake()->numberBetween(1, 6),
+            'size' => fake()->numberBetween(25, 120),
         ];
     }
 

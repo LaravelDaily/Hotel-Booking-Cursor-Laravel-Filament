@@ -9,6 +9,7 @@ use Filament\Forms\Form;
 use Filament\Resources\Resource;
 use Filament\Tables;
 use Filament\Tables\Table;
+use Filament\Forms\Components\SpatieMediaLibraryFileUpload;
 
 class RoomTypeResource extends Resource
 {
@@ -23,6 +24,14 @@ class RoomTypeResource extends Resource
                 Forms\Components\TextInput::make('name')
                     ->required()
                     ->maxLength(255),
+                SpatieMediaLibraryFileUpload::make('photo')
+                    ->collection('photo')
+                    ->image()
+                    ->imageEditor()
+                    ->imageEditorAspectRatios([
+                        '3:2',
+                    ])
+                    ->required(),
                 Forms\Components\Textarea::make('description')
                     ->required()
                     ->maxLength(65535)
@@ -37,6 +46,11 @@ class RoomTypeResource extends Resource
                     ->numeric()
                     ->minValue(1)
                     ->maxValue(10),
+                Forms\Components\TextInput::make('size')
+                    ->required()
+                    ->numeric()
+                    ->minValue(1)
+                    ->suffix('m²'),
                 Forms\Components\CheckboxList::make('amenities')
                     ->relationship('amenities', 'name')
                     ->required()
