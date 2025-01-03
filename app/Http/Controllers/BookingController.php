@@ -53,19 +53,9 @@ class BookingController extends Controller
             'email' => 'required|email|max:255',
         ]);
 
-        // Find an available room
+        // Find an available room using the scope
         $availableRoom = Room::where('room_type_id', $validated['room_type_id'])
-            ->where('is_available', true)
-            ->whereDoesntHave('bookings', function ($query) use ($validated) {
-                $query->where(function ($q) use ($validated) {
-                    $q->whereBetween('check_in', [$validated['check_in'], $validated['check_out']])
-                        ->orWhereBetween('check_out', [$validated['check_in'], $validated['check_out']])
-                        ->orWhere(function ($q) use ($validated) {
-                            $q->where('check_in', '<=', $validated['check_in'])
-                                ->where('check_out', '>=', $validated['check_out']);
-                        });
-                });
-            })
+            ->availableBetween($validated['check_in'], $validated['check_out'])
             ->first();
 
         if (!$availableRoom) {

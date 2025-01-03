@@ -96,3 +96,9 @@ If booking successful, redirect to a new confirmation page. Add the booking conf
 Create Filament Resource to view Customers. There should be only Index and Edit pages, no ability to Create New customer or Delete customer.
 
 Also, create Filament Resource to view Bookings. There should be only Index page, no ability to create/edit/delete bookings. In the table, show booking check in and check out dates, amount of nights, customer name and email, room number and room type name, total price and when booking was created.
+
+---
+
+In SearchRoomsController, modify the query to return the room types only if there's at least one available room of that type within the check in - check out dates requested and with is_available true.
+
+The condition already exists in the BookingController in the query, refactor that condition to not be repeated: create a Service method or Eloquent scope if needed.

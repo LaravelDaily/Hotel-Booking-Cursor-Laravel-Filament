@@ -17,6 +17,9 @@ class SearchRoomsController extends Controller
 
         $roomTypes = RoomType::with('amenities')
             ->where('capacity', '>=', $request->guests)
+            ->whereHas('rooms', function ($query) use ($request) {
+                $query->availableBetween($request->check_in, $request->check_out);
+            })
             ->orderBy('price_per_night')
             ->get();
 
