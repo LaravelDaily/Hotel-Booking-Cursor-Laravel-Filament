@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\SearchRoomsController;
 use Illuminate\Http\Request;
+use App\Http\Controllers\BookingController;
 
 Route::get('/', function () {
     return view('welcome');
@@ -10,7 +11,5 @@ Route::get('/', function () {
 
 Route::get('/rooms/search', SearchRoomsController::class)->name('rooms.search');
 
-Route::get('/booking', function (Request $request) {
-    // TODO: Implement booking logic
-    return redirect()->back();
-})->name('booking');
+Route::get('/booking', [BookingController::class, 'create'])->name('booking');
+Route::post('/booking', [BookingController::class, 'store'])->name('booking.store');
