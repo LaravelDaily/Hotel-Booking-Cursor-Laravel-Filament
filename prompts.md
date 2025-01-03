@@ -90,3 +90,9 @@ Fill in the store() method of BookingController, creating the new Customer (firs
 For the Booking room_id, choose the first room for that room_type_id, available within the requested dates. Make that request outside of database transaction, if no room found - return back with a validation error.
 
 If booking successful, redirect to a new confirmation page. Add the booking confirmation method in the Controller and the Routes. It should just show text page, with the same header, footer and background image as the welcome.blade.php. In the middle section, it should just say "Booking successful" and add a link to the homepage.
+
+---
+
+Create Filament Resource to view Customers. There should be only Index and Edit pages, no ability to Create New customer or Delete customer.
+
+Also, create Filament Resource to view Bookings. There should be only Index page, no ability to create/edit/delete bookings. In the table, show booking check in and check out dates, amount of nights, customer name and email, room number and room type name, total price and when booking was created.
