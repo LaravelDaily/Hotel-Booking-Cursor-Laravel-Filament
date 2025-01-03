@@ -102,3 +102,13 @@ Also, create Filament Resource to view Bookings. There should be only Index page
 In SearchRoomsController, modify the query to return the room types only if there's at least one available room of that type within the check in - check out dates requested and with is_available true.
 
 The condition already exists in the BookingController in the query, refactor that condition to not be repeated: create a Service method or Eloquent scope if needed.
+
+---
+
+All Blade views in the resources/views use the same layout: header and footer. Extract the repeating code into the layout Blade files and partials if needed, using Blade directives extends and yield in the views instead.
+
+---
+
+I'm getting error: View [bookings.partials.booking-summary] not found.
+
+Can you generate that partial file?
