@@ -85,3 +85,8 @@ Form action should be the store() method of the Controller, empty for now, will 
 
 ---
 
+Fill in the store() method of BookingController, creating the new Customer (firstOrCreate) with name and email, and then creating the Booking assigned to that customer. Use Laravel validation and database transaction. 
+
+For the Booking room_id, choose the first room for that room_type_id, available within the requested dates. Make that request outside of database transaction, if no room found - return back with a validation error.
+
+If booking successful, redirect to a new confirmation page. Add the booking confirmation method in the Controller and the Routes. It should just show text page, with the same header, footer and background image as the welcome.blade.php. In the middle section, it should just say "Booking successful" and add a link to the homepage.

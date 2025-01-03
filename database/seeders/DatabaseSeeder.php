@@ -13,6 +13,8 @@ class DatabaseSeeder extends Seeder
             RoomTypeSeeder::class,
             RoomSeeder::class,
             UserSeeder::class,
+            CustomerSeeder::class,
+            BookingSeeder::class,
         ]);
     }
 }
