@@ -112,3 +112,15 @@ All Blade views in the resources/views use the same layout: header and footer. E
 I'm getting error: View [bookings.partials.booking-summary] not found.
 
 Can you generate that partial file?
+
+---
+
+I need to manage hotel fields: hotel name, email, phone number, address, and social links for facebook, instagram and twitter.
+
+Create a database structure for this - model, migration and seeder (no factory, the data should be realistic so straight in the seeder).
+
+Also create a Filament page (not resource, just the edit page) with the form to manage the values of those fields.
+
+Finally, use the values of those fields in the footer for email, phone, address and social links.
+
+---

@@ -9,6 +9,7 @@ class DatabaseSeeder extends Seeder
     public function run(): void
     {
         $this->call([
+            HotelSettingsSeeder::class,
             AmenitySeeder::class,
             RoomTypeSeeder::class,
             RoomSeeder::class,
