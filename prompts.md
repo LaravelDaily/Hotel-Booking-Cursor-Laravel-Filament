@@ -113,6 +113,14 @@ Form action should be the store() method of the Controller, empty for now, will 
 
 **Prompt no.14**
 
+Create database structure for Customer and Booking models. Customer should have fields name and email. Booking should have fields room_type_id, room_id (nullable), customer_id, guests, check_in, check_out, total_price.
+
+Create migrations, models, factories and seeders. In factories, use fake() helper instead of $this->faker
+
+---
+
+**Prompt no.15**
+
 Fill in the store() method of BookingController, creating the new Customer (firstOrCreate) with name and email, and then creating the Booking assigned to that customer. Use Laravel validation and database transaction. 
 
 For the Booking room_id, choose the first room for that room_type_id, available within the requested dates. Make that request outside of database transaction, if no room found - return back with a validation error.
@@ -121,7 +129,7 @@ If booking successful, redirect to a new confirmation page. Add the booking conf
 
 ---
 
-**Prompt no.15**
+**Prompt no.16**
 
 Create Filament Resource to view Customers. There should be only Index and Edit pages, no ability to Create New customer or Delete customer.
 
@@ -129,7 +137,7 @@ Also, create Filament Resource to view Bookings. There should be only Index page
 
 ---
 
-**Prompt no.16**
+**Prompt no.17**
 
 In SearchRoomsController, modify the query to return the room types only if there's at least one available room of that type within the check in - check out dates requested and with is_available true.
 
@@ -137,13 +145,13 @@ The condition already exists in the BookingController in the query, refactor tha
 
 ---
 
-**Prompt no.17**
+**Prompt no.18**
 
 All Blade views in the resources/views use the same layout: header and footer. Extract the repeating code into the layout Blade files and partials if needed, using Blade directives extends and yield in the views instead.
 
 ---
 
-**Prompt no.18**
+**Prompt no.19**
 
 I'm getting error: View [bookings.partials.booking-summary] not found.
 
@@ -151,7 +159,7 @@ Can you generate that partial file?
 
 ---
 
-**Prompt no.19**
+**Prompt no.20**
 
 I need to manage hotel fields: hotel name, email, phone number, address, and social links for facebook, instagram and twitter.
 
@@ -163,7 +171,7 @@ Finally, use the values of those fields in the footer for email, phone, address 
 
 ---
 
-**Prompt no.20**
+**Prompt no.21**
 
 Generate Pest tests for all the routes in the routes/web.php. Divide those tests into separate Pest files by their purpose. If some route has parameters, create different Pest methods for checking various combinations of those parameters and expected results, including validation.
 
@@ -171,7 +179,7 @@ Use RefreshDatabase for all tests, but change phpunit.xml to use SQLite memory d
 
 ---
 
-**Prompt no.21**
+**Prompt no.22**
 
 Class "Database\Factories\AmenityFactory" not found
 Can you generate that factory?
