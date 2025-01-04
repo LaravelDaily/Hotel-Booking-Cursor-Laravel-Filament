@@ -124,3 +124,12 @@ Also create a Filament page (not resource, just the edit page) with the form to 
 Finally, use the values of those fields in the footer for email, phone, address and social links.
 
 ---
+
+Generate Pest tests for all the routes in the routes/web.php. Divide those tests into separate Pest files by their purpose. If some route has parameters, create different Pest methods for checking various combinations of those parameters and expected results, including validation.
+
+Use RefreshDatabase for all tests, but change phpunit.xml to use SQLite memory database.
+
+---
+
+Class "Database\Factories\AmenityFactory" not found
+Can you generate that factory?
